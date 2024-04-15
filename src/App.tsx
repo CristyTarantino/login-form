@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import {useState} from 'react';
+import LoginForm from "./components/LoginForm/LoginForm";
 import './App.css';
 
 function App() {
+    const [hasLoggedIn, setLoggedIn] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+        <div className="login-page-overlay">
+            {hasLoggedIn ?
+                <header className="login-header">
+                    <h1>You are now logged In</h1>
+                </header>:
+                <>
+                    <header className="login-header">
+                        <h1>Login</h1>
+                    </header>
+                    <section>
+                        <LoginForm onLogIn={() => setLoggedIn(true)}/>
+                    </section>
+                </>
+            }
+        </div>
+    </main>
   );
 }
 
