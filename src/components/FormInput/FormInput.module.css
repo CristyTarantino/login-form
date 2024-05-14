@@ -1,0 +1,34 @@
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    padding-bottom: 1rem
+}
+
+.inputContainer {
+    position: relative;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 40px 10px 10px; /* Add padding to make room for the toggle button */
+    font-size: 16px;
+    width: 100%;
+}
+
+.errorMessage {
+    color: #820000;
+    font-size: 14px;
+}
+
+.visibilityToggle {
+    position: absolute;
+    right: 10px; /* Position from the right inside the formGroup */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
